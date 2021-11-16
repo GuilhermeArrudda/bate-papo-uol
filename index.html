@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat UOL</title>
+    <link rel="shortcut icon" href="/imagens/logo 2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="white">
+        <img src="imagens/logo 2.png" alt="Logo do Bate Papo UOL">
+        <ion-icon name="people" onclick="toggleAside()" ></ion-icon>
+    </header>
+    <main>
+        <p>Carregando mensagens</p>
+    </main>
+    <footer class="white">
+        <div class="inputs">
+            <input placeholder="Escreva aqui" type="text" name="inputMsg">
+            <ion-icon name="paper-plane-outline" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
+        </div>
+        <p>Enviando para Todos</p>
+    </footer>
+    <div class="login">
+        <img src="imagens/logo 2.png" alt="Logo do Bate papo UOL">
+        <input type="text" placeholder="Informe seu login" class="username" data-identifier="enter-name"/>
+        <button onclick="enterChat()" data-identifier="start">Entrar</button>
+    </div>
+    <aside class="hidden">
+        <div class="users">
+            <div class="itens-box">
+                <h5>Escolha um contato <br>
+                    para enviar mensagem:</h5>
+                <div class="aside-item selected">
+                    <ion-icon name="people" ></ion-icon>
+                    <p>Todos</p>
+                    <ion-icon class="checkmark" name="checkmark"></ion-icon>
+                </div>
+            </div>
+            <div class="itens-box">
+                <h5>Escolha a visibilidade:</h5>
+                <div class="aside-item selected" onclick="changePrivacy(this)" data-identifier="visibility">
+                    <ion-icon name="lock-open" ></ion-icon>
+                    <p>Público</p>
+                    <ion-icon class="checkmark" name="checkmark"></ion-icon>
+                </div>
+                <div class="aside-item" onclick="changePrivacy(this)" data-identifier="visibility">
+                    <ion-icon name="lock-closed" ></ion-icon>
+                    <p>Reservadamente</p>
+                    <ion-icon class="checkmark" name="checkmark"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="blur hidden" onclick="toggleAside()" ></div>
+    </aside>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
